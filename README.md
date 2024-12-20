@@ -19,11 +19,13 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 
 <h2>List of Prerequisites</h2>
 
-- 
-- Item 2
-- Item 3
-- Item 4
-- Item 5
+- https://drive.google.com/uc?export=download&id=1b3RBkXTLNGXbibeMuAynkfzdBC1NnqaD
+- install PHP Manager for IIS 
+- install the Rewrite Module 
+- install VC_redist.x86.exe
+- install MySQL 5.5.62
+- install  PHP 7.3.8
+- install HeidiSQL
 
 <h2>Installation Steps</h2>
 
@@ -130,19 +132,123 @@ From the osTicket-Installation-Files folder, unzip PHP 7.3.8 into the C:\PHP fol
 
 ![Screenshot 2024-12-16 202133](https://github.com/user-attachments/assets/b3158a75-b2d3-4f5a-8414-32adb06797ec)
 
-<p>Make a root password, then click Next, now click Execute and Finish
+<p>Make a root password, then click Next, now click Execute and Finish.
 </p>
 <br/>
 
 ![image](https://github.com/user-attachments/assets/98487d67-6cc3-4308-90de-e62b6e8bb84b)
 
 <p>Open IIS as an Admin. Click the Start menu, Type IIS. Click Run as administrator
-</p>
+</p>                
 <br/>
 
 ![Screenshot 2024-12-17 003902](https://github.com/user-attachments/assets/61f3ae36-ff64-40ad-adff-b79d6a8c6031)
 
-<p>
-lorem
+<p>Click PHP Manager, now click Register new PHP version.
 </p>
 <br />
+
+![Screenshot 2024-12-18 132353](https://github.com/user-attachments/assets/adbb6685-d03d-46b1-9818-56debb0f20a9)
+
+<p>Register PHP from within IIS. Browse to the C:\PHP folder. Click on the php-cgi application and select Open.
+</p>
+<br />
+
+![image](https://github.com/user-attachments/assets/d939c4cf-ec36-4b52-9574-b36b28f03848)
+
+Proceed with OK and now you should see this screen
+</p>
+<br />
+
+![image](https://github.com/user-attachments/assets/b29d15bb-c615-48a7-ac1f-fcfed8b79aa7)
+
+
+<p>Reload IIS (Open IIS, Stop and Start the server)
+</p>
+<br />
+
+<p>On the left side of the screen, click osTicket and right-click and select Stop. Right click again and select Start.
+</p>
+<br />
+
+![Screenshot 2024-12-18 154520](https://github.com/user-attachments/assets/47b2dde2-5129-417f-97fb-945d9e1a5636)
+
+![image](https://github.com/user-attachments/assets/7ba5e5e2-b0f5-472b-8803-77ed7e34dfc7)
+
+<p>From the osTicket-Installation-Files folder, unzip osTicket-v1.15.8.zip and copy the upload folder into “c:\inetpub\wwwroot”.
+</p>
+<br />
+
+![Screenshot 2024-12-18 164706](https://github.com/user-attachments/assets/0576b2ce-02a4-4db3-94e4-e5ab0bccbd04)
+
+![Screenshot 2024-12-18 170739](https://github.com/user-attachments/assets/e6540168-c29e-4a23-b7a9-d6f79008ba0a)
+
+<p>Reload IIS (Open IIS, Stop and Start the server). The same steps from earlier, use Run as administrator before opening IIS.
+</p>
+</br />
+
+<p>Open the arrow under Connections, next to where you refreshed IIS, click the arrow next to Sites, then Default, now osTicket
+ </p>
+ <br /> 
+
+ ![Screenshot 2024-12-18 191146](https://github.com/user-attachments/assets/6d468166-8088-45db-bd1b-a345e210e862)
+
+ <p>On the right side of the screen, click Browse *:80.
+ </p>
+ <br />
+ 
+   ![Screenshot 2024-12-18 195332](https://github.com/user-attachments/assets/a9f285c4-acc3-4987-a6dd-80cfc85f45ba)
+
+   You should see a webpage similar to this.
+ </p>
+ <br />
+
+![image](https://github.com/user-attachments/assets/3e435983-de55-4cc9-bfd0-7a5a9293aefe)
+
+<p>Go back to IIS, Under Connections, make sure the same arrows are opened that we clicked earlier. Go to PHP Manager again. Now click Enable or disable an extension. Now find the following extensions listed below and right-click on them and enable  
+
+Enable: php_imap.dll   <br />
+Enable: php_intl.dll   <br />
+Enable: php_opcache.dll
+
+![Screenshot 2024-12-18 205422](https://github.com/user-attachments/assets/b2e186dc-6911-49e3-83b4-15558656712b)
+
+Refresh the osTicket site in your browser, observe the changes
+</p>
+
+<p> Rename: ost-config.php <br /> from C:\inetpub\wwwroot\osTicket\include\ost-sampleconfig.php
+<br /> to C:\inetpub\wwwroot\osTicket\include\ost-config.php
+</p>
+
+![Screenshot 2024-12-18 210248](https://github.com/user-attachments/assets/c6652867-bb45-4f05-922d-3db8564168c0)
+
+<p>Right-click on the file. Click Properties, click Security, then Advanced </p>
+
+![image](https://github.com/user-attachments/assets/b8aa3d81-3956-49bc-a68a-c848557133a8)
+
+<p>At the bottom click Disable Inheritance. Then Remove all inherited permissions. At the bottom click Add. Click Select a principal.
+</p>
+
+![Screenshot 2024-12-18 214552](https://github.com/user-attachments/assets/75858c49-16f0-44c7-8ea7-bc6bc013e628)
+
+<p>Type Everyone, and click Check Names, then OK. Select Full control under Basic permissions.
+</p>
+
+![Screenshot 2024-12-18 215522](https://github.com/user-attachments/assets/e2d12cdd-bb0d-4b20-91e9-f77174130bc7)
+
+<p>After Click OK. Then at the bottom click Apply and OK </p>
+
+![image](https://github.com/user-attachments/assets/c866a293-5c05-43b8-a2e2-0788f068a898)
+
+<p>Go back to the osTicket Installer Webpage and click Continue.</p>
+<p>Name the Helpdesk
+Default email (receives email from customers)
+</p>
+
+<p>From the osTicket-Installation-Files folder, install HeidiSQL.
+Open Heidi SQL.Create a new session by selecting New, 
+User is root
+Password is root
+Connect to the session
+Create a database called “osTicket”
+</p>
