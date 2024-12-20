@@ -222,7 +222,8 @@ Refresh the osTicket site in your browser, observe the changes
 
 ![Screenshot 2024-12-18 210248](https://github.com/user-attachments/assets/c6652867-bb45-4f05-922d-3db8564168c0)
 
-<p>Right-click on the file. Click Properties, click Security, then Advanced </p>
+<p>Right-click on the file. Click Properties, click Security, then Advanced 
+</p>
 
 ![image](https://github.com/user-attachments/assets/b8aa3d81-3956-49bc-a68a-c848557133a8)
 
@@ -236,19 +237,41 @@ Refresh the osTicket site in your browser, observe the changes
 
 ![Screenshot 2024-12-18 215522](https://github.com/user-attachments/assets/e2d12cdd-bb0d-4b20-91e9-f77174130bc7)
 
-<p>After Click OK. Then at the bottom click Apply and OK </p>
+<p>After Click OK. Then at the bottom click Apply and OK 
+</p>
+<br />
 
 ![image](https://github.com/user-attachments/assets/c866a293-5c05-43b8-a2e2-0788f068a898)
 
-<p>Go back to the osTicket Installer Webpage and click Continue.</p>
+<p>Go back to the osTicket Installer Webpage and click Continue.
+</p>
 <p>Name the Helpdesk
 Default email (receives email from customers)
 </p>
 
 <p>From the osTicket-Installation-Files folder, install HeidiSQL.
+  
 Open Heidi SQL.Create a new session by selecting New, 
-User is root
-Password is root
+</p>
+
+<p>User is root <br />
+Password is root  <br /></p>
+
+![image](https://github.com/user-attachments/assets/949d2f22-7abd-4c28-a565-6740f30a7f66)
+<p>
+
 Connect to the session
 Create a database called “osTicket”
 </p>
+
+  ![Screenshot 2024-12-19 213314](https://github.com/user-attachments/assets/ecbe2a33-ed8e-425f-92b9-71772be25d4d)
+
+![Screenshot 2024-12-19 213343](https://github.com/user-attachments/assets/c308b9d9-2a7c-4428-9f61-73041916cf55)
+
+<p>After downloading HeidiSQL, complete the database settings for osTicket installer.
+</p>
+<br /> 
+
+<p>Now click Install Now, and you should see a webpage similar to this</p>
+
+![Screenshot 2024-12-19 213620](https://github.com/user-attachments/assets/21224ee2-121f-448e-a146-20116af0ee4d)
